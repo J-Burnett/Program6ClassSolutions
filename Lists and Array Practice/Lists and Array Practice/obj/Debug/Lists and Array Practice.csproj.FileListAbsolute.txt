@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program6ClassSolutions\Lists and Array Practice\Lists and Array Practice\bin\Debug\Lists and Array Practice.exe.config
+C:\Users\Technologist\Documents\GitHub\Program6ClassSolutions\Lists and Array Practice\Lists and Array Practice\bin\Debug\Lists and Array Practice.exe
+C:\Users\Technologist\Documents\GitHub\Program6ClassSolutions\Lists and Array Practice\Lists and Array Practice\bin\Debug\Lists and Array Practice.pdb
+C:\Users\Technologist\Documents\GitHub\Program6ClassSolutions\Lists and Array Practice\Lists and Array Practice\obj\Debug\Lists and Array Practice.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program6ClassSolutions\Lists and Array Practice\Lists and Array Practice\obj\Debug\Lists and Array Practice.exe
+C:\Users\Technologist\Documents\GitHub\Program6ClassSolutions\Lists and Array Practice\Lists and Array Practice\obj\Debug\Lists and Array Practice.pdb
