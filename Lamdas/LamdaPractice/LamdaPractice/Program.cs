@@ -25,9 +25,25 @@ namespace LamdaPractice
             }
 
             //Lambda expressions
-
+            List <string> temp = iceCreamList.OrderBy(x => x.Length).ToList();//adds items to new list in length order
+            foreach(string flavor in temp)
+            {
+                Console.WriteLine(flavor);
+            }
 
             //Where()
+
+
+            //First()
+
+
+            //Last()
+
+
+            //OrderBy()
+
+
+            //Skip()
 
 
             //Keeps console open
