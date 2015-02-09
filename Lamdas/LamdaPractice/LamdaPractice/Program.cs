@@ -8,7 +8,7 @@ namespace LamdaPractice
 {
     class Program
     {
-        public static List<string> iceCreamList = new List<string>() { "vanilla", "chocolate", "strawberry", "coffee", "cherry", "praline pecan", "rocky road", "butter pecan", "cookies and cream", "vanilla fudge ripple" };
+        public static List<string> iceCreamList = new List<string>() { "death by chocolate", "chocolate almond", "vanilla", "chocolate", "strawberry", "coffee", "cherry", "praline pecan", "rocky road", "butter pecan", "cookies and cream", "vanilla fudge ripple" };
         static void Main(string[] args)
         {
             string myString = "lambda";
@@ -31,12 +31,18 @@ namespace LamdaPractice
                 Console.WriteLine(flavor);
             }
 
+            //shortest
+            Console.WriteLine(iceCreamList.OrderBy(x=>x.Length).First());
 
             //longest
             Console.WriteLine(iceCreamList.OrderBy(x=>x.Length).Last());//prints longest/last item
 
             //Where()
-
+            List<string> choco = iceCreamList.Where(x => x.Contains("chocolate")).ToList();
+            foreach(string item in choco)
+            {
+                Console.WriteLine(item);
+            }
 
             //First()
 
