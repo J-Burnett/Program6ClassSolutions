@@ -31,6 +31,10 @@ namespace LamdaPractice
                 Console.WriteLine(flavor);
             }
 
+
+            //longest
+            Console.WriteLine(iceCreamList.OrderBy(x=>x.Length).Last());//prints longest/last item
+
             //Where()
 
 
