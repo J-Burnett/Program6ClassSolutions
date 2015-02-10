@@ -10,7 +10,7 @@ namespace TextStatsLambda_DigitalRoot
     {
         static void Main(string[] args)
         {
-            TextStats("Mike's favorite color is blue.");
+            TextStats("On the other hand, there are fingers. Two days from now will be yesterday. Scotty doesn't know.");
 
             Console.ReadKey();
         }
