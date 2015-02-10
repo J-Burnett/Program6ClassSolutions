@@ -11,7 +11,7 @@ namespace TextStatsLambda_DigitalRoot
         static void Main(string[] args)
         {
             TextStats("On the other hand, there are fingers. Two days from now will be yesterday. Scotty doesn't know.");
-
+            Console.WriteLine(DigitalRoot("3133"));
             Console.ReadKey();
         }
 
@@ -22,23 +22,15 @@ namespace TextStatsLambda_DigitalRoot
         /// <returns></returns>
         public static int DigitalRoot(string rootThisNumber)
         {
-            int intNumber = 0;
-            //loops through the numbers in input
-            foreach(char number in rootThisNumber)
+            int totalSum = 0;
+           
+            while(rootThisNumber.Length > 1)
             {
-                //adds them together
-                intNumber += int.Parse(number.ToString());
-
+                totalSum = rootThisNumber.Sum(x => int.Parse(x.ToString()));
+                rootThisNumber = totalSum.ToString();
             }
+            return totalSum;
 
-            int rootNumber = 0;
-            //loops through the numbers
-            foreach(char number in intNumber.ToString())
-            {
-                //adds each number together
-                rootNumber += int.Parse(number.ToString());
-            }
-            return rootNumber;
         }
 
         public static void TextStats(string inputString)
@@ -54,8 +46,7 @@ namespace TextStatsLambda_DigitalRoot
         }
         public static int NumberOfWords(string inputString)
         {
-            List<string> wordCount = new List<string>(inputString.Split(' '));
-            return wordCount.Count();
+           return inputString.Replace(" ", " ").Split(' ').Length;
         }
 
         public static int NumberOfVowels(string inputString)
@@ -77,14 +68,13 @@ namespace TextStatsLambda_DigitalRoot
 
         public static string LongestWord(string inputString)
         {
-            List<string> longest = new List<string>(inputString.Split(' '));
-            return longest.OrderByDescending(x => x.Length).First();
+          
+            return inputString.Split(' ').OrderByDescending(x => x.Length).First();
         }
 
         public static string ShortestWord(string inputString)
         {
-            List<string> longest = new List<string>(inputString.Split(' '));
-            return longest.OrderBy(x => x.Length).First();
+            return inputString.Split(' ').OrderBy(x => x.Length).First();
         }
 
 
