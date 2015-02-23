@@ -23,13 +23,13 @@ namespace ClassesAndObjectsInClassPractice
 
         static void DoStudentExamples()
         {
-            Student student1 = new Student("John McClary");
+            Student student1 = new Student("John McClary", StudentRank.Senior);
             student1.CourseList.Add(new Course("Professional Development", "B"));
             student1.CourseList.Add(new Course("Programming", "D"));
             student1.CourseList.Add(new Course("Hockey History 101", "A"));
             student1.CourseList.Add(new Course("Being named John","F"));
 
-            Student student2 = new Student("Nicole Winno");
+            Student student2 = new Student("Nicole Winno", StudentRank.Junior);
             student2.CourseList.Add(new Course("Professional Development", "B"));
             student2.CourseList.Add(new Course("Programming", "c"));
             student2.CourseList.Add(new Course("Hockey History 101", "A"));
@@ -144,6 +144,20 @@ namespace ClassesAndObjectsInClassPractice
             Console.WriteLine("{0,25} {1, 2} {2, 3}", this.Name, this.LetterGrade, this.GradePoints);
         }
     }
+    //DEFINING AN ENUMERATION (ENUM)
+    public enum StudentRank
+    {
+        //automatically assigns a numberical value to them, starting with 0
+        //but you can set it to whatever number you would like and they will
+        //continue to increment from that value onward
+        //EG. set Freshman = 5, then Sophmore will = 6
+        //DO NOT HAVE TO BE UNIQUE, BUT THE NAME HAS TO BE UNIQUE
+        //plus you don't really want to do that
+        Freshman,
+        Sophmore,
+        Junior,
+        Senior
+    }
 
     public class Student
     {
@@ -156,6 +170,7 @@ namespace ClassesAndObjectsInClassPractice
             set { _name = value; }//eg. myObj.Name = "Patrick Yee";
             
         }
+
 
         private List<Course> _courseList;
         public List<Course> CourseList
@@ -174,14 +189,25 @@ namespace ClassesAndObjectsInClassPractice
             }
         }
 
-        //other properties might include: age, student ID, date of birth, major, class rank, drinking preference, gender
-        
-        //Step 2: Create constructor(s)
-        public Student (string name)
+
+        private StudentRank _studentRank;
+        public StudentRank StudentRank
+        {
+            get { return _studentRank; }
+            set { _studentRank = value; }
+        }
+
+        //shorthand property declaration
+        //public StudentRank StudentRank { get; set; }
+
+        //other properties might include: age, studentID, DOB, major, ClassRank, Drink Pref, Gender
+
+        //STEP 2: CONSTRUCTORS!!!
+        public Student(string name, StudentRank rank)
         {
             this.Name = name;
-            this.CourseList = new List<Course>();//make sure to initialize any lists
-
+            this.CourseList = new List<Course>(); //make sure to initialize any lists
+            this.StudentRank = rank;
         }
 
         //Step 3: Methods!
@@ -192,7 +218,7 @@ namespace ClassesAndObjectsInClassPractice
             //prints the student's course list
             foreach(Course course in this.CourseList)
             {
-                course.PrintCourseInfo();
+                course.PrintCourseInfo();   
             }
 
             //this.CourseList.ForEach(x => x.PrintCourseInfo());//same thing as the foreach, but with a lambda
